@@ -1,10 +1,10 @@
-var React = require('redux');
+var React = require('react');
 
 var TodoApp = React.createClass({
   render: function() {
     return (
       <div>
-        TodoApp.jsx
+        Welcome to our To-do App Tutorial!
       </div>
     )
   }
