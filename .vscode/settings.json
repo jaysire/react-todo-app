@@ -1,4 +1,5 @@
 {
-  "eslint.enable": false,
-  "jshint.enable": false
+  "eslint.enable": true,
+  "jshint.enable": false,
+  "files.autoSave": "onFocusChange"
 }
