@@ -2,9 +2,12 @@ var React = require('react');
 
 var Todo = React.createClass({
   render: function () {
+    var {text} = this.props;
+    var {id} = this.props;
+
   return (
     <div>
-      testing component
+      {id}- {text}
     </div>
     ) 
   }
