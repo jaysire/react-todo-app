@@ -2,12 +2,13 @@ var React = require('react');
 
 var Todo = React.createClass({
   render: function () {
-    var {text} = this.props;
-    var {id} = this.props;
+    // This is how we fetch/ grab the Todo attributes from our TodoList file;
+    var {id, text} = this.props;
 
   return (
+    // This is how/ where we render out our attributes. Specify what to show on browser.
     <div>
-      {id}- {text}
+      {id}. {text}
     </div>
     ) 
   }
