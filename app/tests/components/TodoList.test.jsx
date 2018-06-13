@@ -12,13 +12,19 @@ describe('TodoList', () => {
     expect(TodoList).toExist();
   });
 
-  it('should render one Todo component for each todo item', () => {
+  it ('should render one Todo component for each todo item', () => {
     var todos = [{
       id: 1,
-      text: 'Do something'
+      text: 'Play video games'
     }, {
       id: 2,
-      text: 'Check mail'
+      text: 'Get a car wash'
+    }, {
+      id: 3,
+      text: 'Check the mail'
+    }, {
+      id: 4,
+      text: 'Do something fun'
     }];
     var todoList = TestUtils.renderIntoDocument(<TodoList todos={todos}/>);
     var todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, Todo);
@@ -26,3 +32,4 @@ describe('TodoList', () => {
     expect(todosComponents.length).toBe(todos.length);
   });
 });
+ 
