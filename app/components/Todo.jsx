@@ -3,26 +3,28 @@ var moment = require('moment');
 
 var Todo = React.createClass({
   render: function () {
-    // This is how we fetch/ grab the Todo attributes from our TodoList file;
-    var {id, text, completed, createdAt} = this.props;
+    var {id, text, completed, createdAt, completedAt} = this.props;
     var renderDate = () => {
-    var message = 'Created ';
-    var timestamp = createdAt;
+      var message = 'Created ';
+      var timestamp = createdAt;
 
-    return message + moment.unix(timestamp).format('MMM Do YYYY @ h:mm a');
+      if (completed) {
+        message = 'Completed ';
+        timestamp = completedAt;
+      }
+
+      return message + moment.unix(timestamp).format('MMM Do YYYY @ h:mm a');
     };
 
-  return (
-    // This is how/ where we render out our attributes. Specify what to show on browser.
-    <div onClick={() => {
-      this.props.onToggle(id);
-      // this is how we get/ fetch the onToggle and render it out; 
-    }}>
-      <input type="checkbox" checked={completed} />
-      <p>{text}</p>
-      <p>{renderDate()}</p>
-    </div>
-    ) 
+    return (
+      <div onClick={() => {
+          this.props.onToggle(id);
+        }}>
+        <input type="checkbox" checked={completed}/>
+        <p>{text}</p>
+        <p>{renderDate()}</p>
+      </div>
+    )
   }
 });
 

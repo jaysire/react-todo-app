@@ -1,4 +1,4 @@
-// Third Party Modules(had to download using npm)
+// Third Party Modules(download via npm)
 var React = require('react');
 var uuid = require('node-uuid');
 var moment = require('moment');
@@ -33,7 +33,8 @@ var TodoApp = React.createClass({
 					// a long random string that uses time stamp to seed the data.
 					text: text,
 					completed: false,
-					createdAt: moment().unix()
+					createdAt: moment().unix(),
+					completedAt: undefined,
 				},
 			],
 		});
@@ -44,6 +45,7 @@ var TodoApp = React.createClass({
 		var updatedTodos = this.state.todos.map(todo => {
 			if (todo.id === id) {
 				todo.completed = !todo.completed;
+				todo.completedAt = todo.completed ? moment().unix() : undefined;
 			}
 
 			return todo;
