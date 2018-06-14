@@ -51,4 +51,25 @@ describe('TodoAPI', () => {
       expect(actualTodos).toEqual(todos);
     });
   });
+
+  describe('filterTodos', () => {
+    var todos = [{
+      id:1,
+      text: 'some text goes here',
+      completed: true
+    }, {
+      id:2,
+      text: 'other text will be here',
+      completed: false
+    }, {
+      id:3,
+      text: 'and some more text here',
+      completed: true
+    }];
+
+    it('should return all items if show-Completed is true', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, true, '');
+      expect(filteredTodos.length).toBe(3);
+    })
+  });
 });
