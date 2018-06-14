@@ -31,10 +31,13 @@ describe('TodoApp', () => {
     todoApp.setState({todos: [todoData]});
 
     // check that todo first item has completed value of false;
+    expect(todoApp.state.todos[0].completed).toBe(false);
 
     // call handleToggle with 11;
+    todoApp.handleToggle(11);
 
     // Verify that the value changed;
-    
+    expect(todoApp.state.todos[0].completed).toBe(true);
+
   });
 });
