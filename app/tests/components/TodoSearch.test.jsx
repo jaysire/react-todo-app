@@ -14,7 +14,7 @@ describe('TodoSearch', () => {
 	it('should call onSearch with entered input text', () => {
 		var searchText = 'Dog';
 		var spy = expect.createSpy();
-		var TodoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy} />);
+		var todoSearch = TestUtils.renderIntoDocument(<TodoSearch onSearch={spy} />);
 
 		todoSearch.refs.searchText.value = searchText;
 		TestUtils.Simulate.change(todoSearch.refs.searchText);
