@@ -22,5 +22,10 @@ module.exports = {
     }
 
     return $.isArray(todos) ? todos : [];
-  }
+	},
+	filteredTodos: function (todos, showCompleted, searchText) {
+		var filteredTodos = todos;
+
+		return filteredTodos;
+	}
 };
