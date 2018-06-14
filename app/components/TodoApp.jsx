@@ -1,37 +1,19 @@
+// Third Party Modules(had to download using npm)
 var React = require('react');
-
-var TodoList = require('TodoList');
-
-var AddTodo = require('AddTodo');
-
-var TodoSearch = require('TodoSearch');
-
 var uuid = require('node-uuid');
+    
+// Local Modules(foune in my code)
+var TodoList = require('TodoList');
+var AddTodo = require('AddTodo');
+var TodoSearch = require('TodoSearch');
+var TodoAPI = require(TodoAPI)
 
 var TodoApp = React.createClass({
   getInitialState: function () {
     return {
       showCompleted: false,
       searchText: '',
-      todos: [
-        {
-          id: uuid(),
-          text: 'Check the  mail',
-          completed: false
-        }, {
-          id: uuid(),
-          text: 'Go for a bike ride',
-          completed: true
-        }, {
-          id: uuid(),
-          text: 'Clean the backyard',
-          completed: false
-        }, {
-          id: uuid(),
-          text: 'Practise Javascript algorithms',
-          completed: true
-        }
-      ]
+      todos: TodoAPI.getTodos()
     };
   },
 
