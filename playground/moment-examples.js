@@ -11,6 +11,7 @@ console.log('Current timestamp', now.unix());
 
 var timestamp = 1528970602;
 
+// reverse-engeneer/ convert it to a readable format -user friendly;
 var currentMoment = moment.unix(timestamp);
 
 console.log('current moment one =>', currentMoment.format('MMM D, YY @ h:mm a'));

@@ -1,6 +1,7 @@
 // Third Party Modules(had to download using npm)
 var React = require('react');
 var uuid = require('node-uuid');
+var moment = require('moment');
 
 // Local Modules(foune in my code)
 var TodoList = require('TodoList');
@@ -32,6 +33,7 @@ var TodoApp = React.createClass({
 					// a long random string that uses time stamp to seed the data.
 					text: text,
 					completed: false,
+					createdAt: moment().unix()
 				},
 			],
 		});
