@@ -53,13 +53,15 @@ var TodoApp = React.createClass({
 
   handleToggle: function (id) {
     alert(id);
-  }
+  },
+
   handleSearch: function (showCompleted, searchText) {
     this.setState({
       showCompleted: showCompleted,
       searchText: searchText.toLowerCase(),
     });
   },
+
   render: function () {
     var {todos} = this.state;
 
