@@ -1,4 +1,4 @@
-var $ = require('jqury');
+var $ = require('jquery');
 
 module.exports = {
 	setTodos: function(todos) {
@@ -13,12 +13,10 @@ module.exports = {
 
 		try {
 			todos = JSON.parse(stringTodos);
-		} catch (e) {}
+		} catch (e) {
 
-		if ($.isArray(todos)) {
-			return todos;
-		} else {
-			return [];
-		}
-	},
+    }
+
+    return $.isArray(todos) ? todos : [];
+  }
 };

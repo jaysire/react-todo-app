@@ -6,7 +6,7 @@ var uuid = require('node-uuid');
 var TodoList = require('TodoList');
 var AddTodo = require('AddTodo');
 var TodoSearch = require('TodoSearch');
-var TodoAPI = require(TodoAPI);
+var TodoAPI = require('TodoAPI');
 
 var TodoApp = React.createClass({
 	getInitialState: function() {
