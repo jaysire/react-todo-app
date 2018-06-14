@@ -52,6 +52,7 @@ var TodoApp = React.createClass({
   },
 
   handleToggle: function (id) {
+    // this is how we updated our todo list of done and not done tasks;
     var updatedTodos = this.state.todos.map ((todo)=> {
       if (todo.id === id) {
         todo.completed = !todo.completed;
