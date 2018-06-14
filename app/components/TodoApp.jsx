@@ -16,16 +16,20 @@ var TodoApp = React.createClass({
       todos: [
         {
           id: uuid(),
-          text: 'Check the  mail'
+          text: 'Check the  mail',
+          completed: false
         }, {
           id: uuid(),
-          text: 'Go for a bike ride'
+          text: 'Go for a bike ride',
+          completed: true
         }, {
           id: uuid(),
-          text: 'Clean the backyard'
+          text: 'Clean the backyard',
+          completed: false
         }, {
           id: uuid(),
-          text: 'Practise Javascript algorithms'
+          text: 'Practise Javascript algorithms',
+          completed: true
         }
       ]
     };
@@ -40,12 +44,16 @@ var TodoApp = React.createClass({
           id: uuid(),
           // we used node package to generate a UUA ID(universal unique Identifier);
           // a long random string that uses time stamp to seed the data.
-          text: text
+          text: text,
+          completed: false
         }
       ]
     })
   },
 
+  handleToggle: function (id) {
+    alert(id);
+  }
   handleSearch: function (showCompleted, searchText) {
     this.setState({
       showCompleted: showCompleted,

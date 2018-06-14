@@ -15,7 +15,6 @@ describe('TodoApp', () => {
     var todoText = 'Testing text message';
     var todoApp = TestUtils.renderIntoDocument(<TodoApp />);
     
-
     todoApp.setState({todos: []})
     todoApp.handleAddTodo(todoText);
 
