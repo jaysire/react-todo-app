@@ -12,7 +12,8 @@ var TodoList = React.createClass({
           // we use the unique Key property to initialize fetching our id and todo values and render out our Todo component:
           // The key property helps react keep track of each list item.
           // The Spread operator takes every attribut on Todo whcih in our case its ID & TEXT and passes it down as a prop.
-          <Todo key={todo.id} {...todo} />
+          <Todo key={todo.id} {...todo} onToggle={this.props.onToggle} />
+          // we passed the onToggle from TodoApp to Todo file;
         );
       });
     };

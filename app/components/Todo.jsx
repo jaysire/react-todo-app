@@ -9,6 +9,7 @@ var Todo = React.createClass({
     // This is how/ where we render out our attributes. Specify what to show on browser.
     <div onClick={() => {
       this.props.onToggle(id);
+      // this is how we get/ fetch the onToggle and render it out; 
     }}>
       <input type="checkbox" checked={completed} />
       {text}
