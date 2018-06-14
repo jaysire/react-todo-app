@@ -7,37 +7,36 @@ var $ = require('jquery');
 var TodoApp = require('TodoApp');
 
 describe('TodoApp', () => {
-  it('should exist', () => {
-    expect(TodoApp).toExist();
-  });
+	it('should exist', () => {
+		expect(TodoApp).toExist();
+	});
 
-  it('should add todo to the todos state on handleAddTodo', () => {
-    var todoText = 'Testing text message';
-    var todoApp = TestUtils.renderIntoDocument(<TodoApp />);
-    
-    todoApp.setState({todos: []})
-    todoApp.handleAddTodo(todoText);
+	it('should add todo to the todos state on handleAddTodo', () => {
+		var todoText = 'Testing text message';
+		var todoApp = TestUtils.renderIntoDocument(<TodoApp />);
 
-    expect(todoApp.state.todos[0].text).toBe(todoText);
-  });
+		todoApp.setState({ todos: [] });
+		todoApp.handleAddTodo(todoText);
 
-  it('should toggle completed value when handleToggle is called', () => {
-    var todoData = {
-      id: 11,
-      text: 'Test features',
-      completed: false
-    };
-    var todoApp = TestUtils.renderIntoDocument(<TodoApp />);
-    todoApp.setState({todos: [todoData]});
+		expect(todoApp.state.todos[0].text).toBe(todoText);
+	});
 
-    // check that todo first item has completed value of false;
-    expect(todoApp.state.todos[0].completed).toBe(false);
+	it('should toggle completed value when handleToggle is called', () => {
+		var todoData = {
+			id: 11,
+			text: 'Test features',
+			completed: false,
+		};
+		var todoApp = TestUtils.renderIntoDocument(<TodoApp />);
+		todoApp.setState({ todos: [todoData] });
 
-    // call handleToggle with 11;
-    todoApp.handleToggle(11);
+		// check that todo first item has completed value of false;
+		expect(todoApp.state.todos[0].completed).toBe(false);
 
-    // Verify that the value changed;
-    expect(todoApp.state.todos[0].completed).toBe(true);
+		// call handleToggle with 11;
+		todoApp.handleToggle(11);
 
-  });
+		// Verify that the value changed;
+		expect(todoApp.state.todos[0].completed).toBe(true);
+	});
 });
