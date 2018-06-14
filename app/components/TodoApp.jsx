@@ -6,6 +6,8 @@ var AddTodo = require('AddTodo');
 
 var TodoSearch = require('TodoSearch');
 
+var uuid = require('node-uuid');
+
 var TodoApp = React.createClass({
   getInitialState: function () {
     return {
@@ -13,16 +15,16 @@ var TodoApp = React.createClass({
       searchText: '',
       todos: [
         {
-          id: 1,
+          id: uuid(),
           text: 'Check the  mail'
         }, {
-          id: 2,
+          id: uuid(),
           text: 'Go for a bike ride'
         }, {
-          id: 3,
+          id: uuid(),
           text: 'Clean the backyard'
         }, {
-          id: 4,
+          id: uuid(),
           text: 'Practise Javascript algorithms'
         }
       ]
@@ -30,7 +32,18 @@ var TodoApp = React.createClass({
   },
 
   handleAddTodo: function (text) {
-    alert('new todo: ' + text);
+    this.setState({
+      todos: [
+        // this is just setting it to its intial state, we haven't changed/ updated anything just yet.
+        ...this.state.todos,
+        {
+          id: uuid(),
+          // we used node package to generate a UUA ID(universal unique Identifier);
+          // a long random string that uses time stamp to seed the data.
+          text: text
+        }
+      ]
+    })
   },
 
   handleSearch: function (showCompleted, searchText) {
