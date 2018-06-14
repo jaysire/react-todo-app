@@ -70,6 +70,11 @@ describe('TodoAPI', () => {
     it('should return all items if show-Completed is true', () => {
       var filteredTodos = TodoAPI.filterTodos(todos, true, '');
       expect(filteredTodos.length).toBe(3);
+    });
+
+    it('should return non-completed todos when showCompleted is false', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, false, '');
+      expect(filteredTodos.length).toBe(1);
     })
   });
 });
