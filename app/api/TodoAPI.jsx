@@ -9,6 +9,19 @@ module.exports = {
     }
   },
   getTodos: function () {
+    var stringTodos = localStorage.getItem('todos');
+    var todos = [];
 
+    try {
+      todos = JSON.parse(stringTodos);
+    } catch (e) {
+
+    }
+
+    if ($.isArray(todos)) {
+      return todos;
+    } else {
+      return [];
+    }
   }
 };
