@@ -1,6 +1,6 @@
-var expect = require('expect');
+var expect = require('expect'),
 
-var TodoAPI = require('TodoAPI');
+var TodoAPI = require('TodoAPI'),
 
 describe('TodoAPI', () => {
   beforeEach(() => {
