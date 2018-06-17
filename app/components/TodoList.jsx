@@ -5,6 +5,11 @@ var TodoList = React.createClass({
   render: function () {
     var {todos} = this.props;
     var renderTodos = () => {
+      if (todos.length === 0) {
+        return (
+          <p className="container_message">Just chilling - nothing to do</p>
+        );
+      }
       return todos.map((todo) => {
         return (
           // we used the spread method to iterate thru our todo list and we output them individually
